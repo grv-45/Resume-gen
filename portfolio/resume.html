@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Your own CV</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* Additional CSS for layout */
+    body {
+      background-color: linear;-gradient:(to right, #e0eafc, #cfdef3); /* Gradient background */
+      background-color: #f8f9fa; /* Light background color */
+      font-family: Arial, sans-serif; /* Default font family */
+    }
+
+    .container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+    }
+
+    #cv-form h1 {
+      color: #007bff; /* Primary color */
+      margin-bottom: 30px;
+    }
+
+    .form-group label {
+      font-weight: bold;
+    }
+
+    .form-control {
+      border-radius: 10px;
+      border: 1px solid #ced4da;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    #cv-template .col-md-4 {
+      display: flex;
+      align-items: center;
+    }
+
+    #cv-template #cvName {
+      margin-top: 0;
+    }
+
+    .text-orange {
+      background-color: #007bff; 
+      border-radius: 15px; 
+      padding: 5px 10px; 
+      color: white; 
+      display: inline-block; 
+      margin-top: 0; 
+    }
+
+    #personalDetails {
+      width: calc(100% - 310px); /* Adjusted width */
+    }
+
+    #hobbiesAndObjective {
+      width: 300px;
+      margin-left: 10px;
+    }
+
+    /* CSS for professional information background */
+    .professional-section {
+      background-color: #f5f5f5; /* Light gray background */
+      border-radius: 15px; /* Curvy rectangle */
+      padding: 15px;
+      margin-bottom: 20px;
+      color: black; /* Black text color */
+    }
+
+    /* Style for individual sections within professional information */
+    .professional-section h3 {
+      color: black; /* Black text color for headings */
+    }
+
+    .professional-section textarea, .professional-section input {
+      background-color: white; /* White background for inputs */
+      color: black; /* Black text color for inputs */
+    }
+
+    /* Attractive background for CV template */
+    #cv-template {
+      background-image: url('background-image-url'); /* Replace with your background image URL */
+      background-size: cover;
+      background-position: center;
+      border-radius: 15px; /* Curvy rectangle */
+      padding: 20px;
+      margin-top: 20px;
+      color: black; /* Black text color */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added shadow for effect */
+    }
+
+    /* Styles for the go back button */
+    .go-back-button {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .rounded-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container" id="cv-form">
+  <h1 class="text-center my-3">Resume Builder</h1>
+  <div class="row">
+    <div class="col-md-6" id="personalDetails">
+      <!-- first column -->
+      <h3>Personal information</h3>
+      <div class="form-group mt-2">
+        <label for="nameField">Your Name</label>
+        <input type="text" id="nameField" placeholder="Enter Your name" class="form-control">
+      </div>
+      <div class="form-group mt-2">
+        <label for="dobField">Date of Birth</label>
+        <input type="date" id="dobField" class="form-control">
+      </div>
+      <div class="form-group mt-2">
+        <label for="mobileNumberField">Mobile Number</label>
+        <input type="number" id="mobileNumberField" placeholder="Enter Your mobile number" class="form-control">
+      </div>
+      <div class="form-group mt-2"><!--fkejfkejkje-->
+        <label for="addressField">Your address</label>
+        <textarea id="addressField" placeholder="Enter Your address" class="form-control"></textarea>
+      </div>
+      <div class="form-group mt-2">
+        <label for="instagramField">Instagram ID</label>
+        <input type="text" id="instagramField" placeholder="Enter Your Instagram ID" class="form-control">
+      </div>
+      <div class="form-group mt-2">
+        <label for="emailField">Email ID</label>
+        <input type="text" id="emailField" placeholder="Enter Your Email ID" class="form-control">
+      </div>
+    </div>
+      
+    <div class="col-md-6" id="professionalDetails">
+      <!-- second column -->
+      <div class="professional-section">
+        <h3>Professional information</h3>
+        <div class="upload-picture mt-2">
+          <label for="picture">Upload Picture</label>
+          <input type="file" id="picture" class="form-control-file">
+        </div>
+        
+        <div class="form-group mt-2">
+          <label for="hobbiesField">Hobbies</label>
+          <textarea id="hobbiesField" placeholder="Enter Your hobbies" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group mt-2">
+          <label for="objectiveField">Objectives</label>
+          <textarea id="objectiveField" placeholder="Enter here" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group mt-2" id="we">
+          <label for="weField">Work Experience</label>
+          <textarea placeholder="Enter here" class="form-control wefield" rows="3"></textarea>
+          <div class="container text-center mt-3" id="weAddButton">
+            <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+            <button onclick="removeWEField()" class="btn btn-danger btn-sm">Remove</button>
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="qualificationField">Qualification</label>
+          <textarea placeholder="Enter here" class="form-control qfield"></textarea>
+
+          <div class="container text-center mt-3" id="qAddButton">
+            <button onclick="addNewQField()" class="btn btn-primary btn-sm">Add</button>
+            <button onclick="removeQField()" class="btn btn-danger btn-sm">Remove</button>
+          </div>
+        </div>
+         <div class="form-group mt-2">
+          <label for="declarationField">Declaration</label>
+          <textarea placeholder="Enter here" class="form-control qfield" id="declarationField"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div> 
+  <div class="container text-center mt-3">
+    <button onclick="validateForm()" class="btn btn-primary btn-lg">Generate Resume</button>
+  </div>
+</div>
+
+<div class="container mt-5" id="cv-template" style="display: none;">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <img src="#" alt="Uploaded Picture" id="cvPicture" class="rounded-img d-none">
+      <h2 id="cvName"></h2>
+      <p id="cvAge"></p>
+    </div>
+    <div class="col-md-12 text-center">
+      <div id="contactDetails">
+        <h4 class="text-orange">☏ My Contacts</h4>
+        <p id="cvMobile"></p>
+        <p id="cvAddress"></p>
+        <p id="cvInstagram"></p>
+        <p id="cvEmail"></p>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Work Experience section -->
+          <h
+
+3 class="text-orange">✍ Work Experience</h3>
+          <p id="cvWE"></p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <!-- Qualifications section -->
+          <h3 class="text-orange">🎓 Qualifications</h3>
+          <p id="cvQualification"></p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <!-- Declaration section -->
+          <h3 class="text-orange">📜 Declaration</h3>
+          <p id="cvDeclaration"></p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <!-- Hobbies section -->
+          <h3 class="text-orange">🎨 Hobbies</h3>
+          <p id="cvHobbies"></p>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <!-- Objectives section -->
+          <h3 class="text-orange">🎯 Objectives</h3>
+          <p id="cvObjective"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container text-center mt-3">
+    <button onclick="printCV()" class="btn btn-secondary btn-lg" id="printButton">Print CV</button>
+    <button onclick="goBack()" class="btn btn-primary btn-lg go-back-button">Go Back</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gybBogGzW7r4tK0F/Qp+8SKA1ylw/nkZfGZ9xLjO2BxC8p3b3e" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+<script src="script.js"></script>
+<script>
+  let weFieldCount = 1;
+  let qFieldCount = 1;
+
+  function addNewWEField() {
+    weFieldCount++;
+    let newNode = document.createElement('textarea');
+    newNode.classList.add('form-control', 'wefield', 'mt-2');
+    newNode.setAttribute('placeholder', 'Enter here');
+    newNode.setAttribute('rows', '3');
+    let weOb = document.getElementById('we');
+    let weAddButtonOb = document.getElementById('weAddButton');
+    weOb.insertBefore(newNode, weAddButtonOb);
+  }
+
+  function removeWEField() {
+    if (weFieldCount > 1) {
+      let weFields = document.getElementsByClassName('wefield');
+      weFields[weFields.length - 1].remove();
+      weFieldCount--;
+    }
+  }
+
+  function addNewQField() {
+    qFieldCount++;
+    let newNode = document.createElement('textarea');
+    newNode.classList.add('form-control', 'qfield', 'mt-2');
+    newNode.setAttribute('placeholder', 'Enter here');
+    let qOb = document.getElementById('qualificationField');
+    let qAddButtonOb = document.getElementById('qAddButton');
+    qOb.parentNode.insertBefore(newNode, qAddButtonOb);
+  }
+
+  function removeQField() {
+    if (qFieldCount > 1) {
+      let qFields = document.getElementsByClassName('qfield');
+      qFields[qFields.length - 1].remove();
+      qFieldCount--;
+    }
+  }
+
+  function printCV() {
+    window.print();
+  }
+
+  function validateForm() {
+    let nameField = document.getElementById('nameField').value;
+    let dobField = document.getElementById('dobField').value;
+    let mobileNumberField = document.getElementById('mobileNumberField').value;
+    let addressField = document.getElementById('addressField').value;
+    let instagramField = document.getElementById('instagramField').value;
+    let emailField = document.getElementById('emailField').value;
+
+    if (!nameField || !dobField || !mobileNumberField || !addressField || !instagramField || !emailField) {
+      alert("Please fill in all the required fields.");
+      return;
+    }
+
+    generateCV();
+  }
+
+  function generateCV() {
+    document.getElementById('cv-form').style.display = 'none';
+    document.getElementById('cv-template').style.display = 'block';
+
+    document.getElementById('cvName').innerHTML = document.getElementById('nameField').value;
+    document.getElementById('cvAge').innerHTML = 'DOB: ' + document.getElementById('dobField').value;
+    document.getElementById('cvMobile').innerHTML = 'Mobile: ' + document.getElementById('mobileNumberField').value;
+    document.getElementById('cvAddress').innerHTML = 'Address: ' + document.getElementById('addressField').value;
+    document.getElementById('cvInstagram').innerHTML = 'Instagram: ' + document.getElementById('instagramField').value;
+    document.getElementById('cvEmail').innerHTML = 'Email: ' + document.getElementById('emailField').value;
+
+    let wes = document.getElementsByClassName('wefield');
+    let weStr = '';
+    for (let e of wes) {
+      weStr += `<li>${e.value}</li>`;
+    }
+    document.getElementById('cvWE').innerHTML = weStr;
+
+    let qes = document.getElementsByClassName('qfield');
+    let qeStr = '';
+    for (let e of qes) {
+      qeStr += `<li>${e.value}</li>`;
+    }
+    document.getElementById('cvQualification').innerHTML = qeStr;
+
+    document.getElementById('cvDeclaration').innerHTML = document.getElementById('declarationField').value;
+    document.getElementById('cvHobbies').innerHTML = document.getElementById('hobbiesField').value;
+    document.getElementById('cvObjective').innerHTML = document.getElementById('objectiveField').value;
+
+    let picture = document.getElementById('picture').files[0];
+    if (picture) {
+      let reader = new FileReader();
+      reader.onloadend = function () {
+        document.getElementById('cvPicture').src = reader.result;
+        document.getElementById('cvPicture').classList.remove('d-none');
+      };
+      reader.readAsDataURL(picture);
+    } else {
+      document.getElementById('cvPicture').classList.add('d-none');
+    }
+    document.querySelector('.go-back-button').style.display = 'inline-block';
+  }
+
+  function goBack() {
+    document.getElementById('cv-template').style.display = 'none';
+    document.getElementById('cv-form').style.display = 'block';
+    document.querySelector('.go-back-button').style.display = 'none';
+  }
+</script>
+</body>

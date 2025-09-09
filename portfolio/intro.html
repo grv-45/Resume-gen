@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Gourav</title>
+    
+    <style>/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f9;
+    color: #333;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+#sidebar {
+    width: 220px;
+    background: #222;
+    color: #fff;
+    padding: 20px;
+}
+
+#sidebar h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#sidebar ul {
+    list-style: none;
+}
+
+#sidebar ul li {
+    margin: 15px 0;
+}
+
+#sidebar ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+#sidebar ul li a:hover {
+    color: #f9d342;
+}
+
+/* Main content */
+.main {
+    flex: 1;
+    padding: 40px;
+    background: #fff;
+}
+
+.main h1 {
+    font-size: 26px;
+    margin: 20px 0 10px;
+    color: #222;
+}
+
+/* Paragraph */
+.main p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Skills */
+.skillitem {
+    margin: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+.skillitem .skill {
+    height: 10px;
+    width: 100%;
+    background: #ddd;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 6px;
+    position: relative;
+}
+
+/* Progress levels */
+.skillitem:nth-child(4) .skill::before { width: 85%; background: #ff9800; content: ""; position: absolute; top: 0; bottom: 0; left: 0; }
+.skillitem:nth-child(5) .skill::before { width: 80%; background: #3f51b5; content: ""; position: absolute; top: 0; bottom: 0; left: 0; }
+.skillitem:nth-child(6) .skill::before { width: 65%; background: #4caf50; content: ""; position: absolute; top: 0; bottom: 0; left: 0; }
+.skillitem:nth-child(7) .skill::before { width: 70%; background: #9c27b0; content: ""; position: absolute; top: 0; bottom: 0; left: 0; }
+.skillitem:nth-child(8) .skill::before { width: 75%; background: red; content: ""; position: absolute; top: 0; bottom: 0; left: 0; }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="sidebar">
+            <h2>Gourav</h2>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="intro.html">Intro</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="resume.html">CV</a></li>
+                    <li><a href="contact.html">Contact me</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="main">
+            <h1>About me</h1>
+            <p>Hello,i am Gourav Bhardwaj from jind haryana.I am working on projects for web dev and on side i am
+                learning java</p>
+                <h1>My Skills</h1>
+                <div class="skillitem">Html:<div class="skill"></div></div>
+                <div class="skillitem">css:<div class="skill"></div></div>
+                 <div class="skillitem">Jvascipt:<div class="skill"></div></div>
+                <div class="skillitem">Java:<div class="skill"></div></div>
+                <div class="skillitem">Mysql:<div class="skill"></div></div>
+                <div class="myprojects">
+            <h1>My projects</h1>
+        </div>
+        </div>
+        
+        
+    </div>
+</body>
+
+</html>

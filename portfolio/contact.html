@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Container */
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+/* Sidebar */
+#sidebar {
+  width: 220px;
+  background-color: #222;
+  color: white;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+#sidebar nav ul li {
+  margin: 12px 0;
+}
+
+#sidebar nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+#sidebar nav ul li a:hover {
+  color: #f39c12;
+}
+
+/* Main content placeholder */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* Form container */
+.containerform {
+  flex: 1;
+  background-color: #fff;
+  margin: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Form heading */
+.containerform h1 {
+  font-size: 24px;
+  margin-bottom: 25px;
+  color: #222;
+  text-align: center;
+}
+
+/* Form fields */
+form .form-label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  display: block;
+  color: #333;
+}
+
+form .form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  transition: 0.3s ease;
+}
+
+form .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 6px rgba(0,123,255,0.4);
+  outline: none;
+}
+
+/* Checkbox */
+form .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+form .form-check-input {
+  margin-right: 8px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+form .form-check-label {
+  font-size: 14px;
+  color: #444;
+}
+
+/* Submit button */
+form .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 15px;
+  background: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form .btn-primary:hover {
+  background: #0056b3;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .containerform {
+    margin: 20px auto;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .containerform {
+    padding: 20px;
+  }
+
+  .containerform h1 {
+    font-size: 20px;
+  }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div id="sidebar">
+        Gourav
+        <nav><ul>
+            <li><a href="/">Home</a></li>
+             <li><a href="intro.html">Intro</a> </li>
+             <li><a href="service.html">Services</a></li>
+             <li><a href="resume.html">CV</a></li>
+             <li><a href="Contact.html">Conatct me</a></li>
+        </ul></nav>
+    </div>
+    <div class="main"></div>
+    <div class="containerform">
+        <h1>Contact me for work/General queries</h1>
+        <form>
+     <div class="mb-3">
+    <label for="clientName" class="form-label">Name</label>
+    <input type="name" class="form-control" id="clientName" >
+    
+  </div>
+  <div class="mb-3">
+    <label for="clientEmail" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="clientEmail" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="clientPhone" class="form-label">Mobile Number</label>
+    <input type="Enter phone number" class="form-control" id="clientPhone">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="isclient">
+    <label class="form-check-label" for="isclient">Check me out</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    </div>
+    
+       
+    </div>
+    </div>
+    
+</body>
+</html>
